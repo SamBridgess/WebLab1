@@ -18,11 +18,9 @@ if (isset($_GET["x"]) && isset($_GET["y"]) & isset($_GET["r"])){
     $x= $_GET["x"];
     $y= $_GET["y"]; 
     if (!is_numeric($x) || !is_numeric($y) || !is_numeric($r)) {
-        // http_response_code(400);
         exit("Only number must be passed");
     }
     else{
-        //validate($x, $y, $r);
         $is_hit = is_hit($x, $y, $r);
         if($is_hit){
             $res = "true";
@@ -55,18 +53,7 @@ if (isset($_GET["x"]) && isset($_GET["y"]) & isset($_GET["r"])){
     }
 }
 else{
-    // http_response_code(400);
     exit("Not all parameters were passed");
 }
 
-function validate($x, $y, $r)
-{
-    if ((!is_int($x)) || (!is_int($y)) || (!is_int($r)) || 
-        in_array($x, values_of_X) ||
-        ($y < MIN_Y) || ($y > MAX_Y) || ($r < MIN_R) || ($r > MIN_R) 
-     ){
-       http_response_code(400);
-       exit("Parameters are invalid");
-    }
-}
 ?>
