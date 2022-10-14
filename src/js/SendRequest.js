@@ -1,8 +1,8 @@
 function sendRequest(){
     if (validate(true)){
 
-        let Y_value = $('#Y_value').val();
         let X_value = $('#X_value').val();
+        let Y_value = $('#Y_value').val();
         let R_value = $('#R_value').val();
 
         $.ajax({

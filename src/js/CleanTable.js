@@ -6,7 +6,7 @@ function cleanTable(){
         url: "src/php/table.php",
         async: false,
         success: function(data){
-            get_table();
+            getTable();
         },
         error: function(data) {
             alert(data);

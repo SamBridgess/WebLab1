@@ -14,9 +14,10 @@ const MIN_R = 1;
 const MAX_R = 4;
 
 if (isset($_GET["x"]) && isset($_GET["y"]) & isset($_GET["r"])){
-    $r= $_GET["r"];
+
     $x= $_GET["x"];
     $y= $_GET["y"]; 
+    $r= $_GET["r"];
     if (!is_numeric($x) || !is_numeric($y) || !is_numeric($r)) {
         exit("Only number must be passed");
     }
@@ -31,14 +32,17 @@ if (isset($_GET["x"]) && isset($_GET["y"]) & isset($_GET["r"])){
 
         $script_time = round((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 2);
 
+
+        $y= substr($_GET["y"], 0, 11); 
+        $r= substr($_GET["r"], 0, 11);
         $line = "
         <tr>
             <td>$x</td>
             <td>$y</td>
             <td>$r</td>
             <td>$res</td>
-            <td>$current_time </td>
-            <td> $script_time </td>    
+            <td>$current_time</td>
+            <td>$script_time</td>    
         </tr>
         ";
         if(!isset($_SESSION['table'])) {

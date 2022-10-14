@@ -12,7 +12,8 @@
 }
 #forms{
     border: 1px solid;
-    width: fit-content;
+    width: 230px;
+    height: 400px;
     padding: 5%;
     margin-bottom: 10%;
     background-color: #959e4c;
@@ -20,11 +21,20 @@
 #main > div{
     margin: 10px;
 }
-#submit, #reset{
-    margin: 9%;
+#submit{
+    margin-left: 9%;
+}
+#reset{
+    margin-left: 26%;
+}
+#Y_value, #R_value{
+    width: 150px;
 }
 #cleaner{
     margin: 1%;
+}
+.buttons{
+    margin: 3%;
 }
 table {
     font-family: serif, sans-serif;

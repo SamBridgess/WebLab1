@@ -1,11 +1,11 @@
 function validate(print_permission){
-    let Y_value = $('#Y_value').val();
     let X_value = $('#X_value').val();
+    let Y_value = $('#Y_value').val();
     let R_value = $('#R_value').val();
     let info = "";
-    info += "<span>" + validate_y(Y_value) + "</span>";
-    info += "<span>" + validate_x(X_value) + "</span>";
-    info += "<span>" + validate_r(R_value) + "</span>";
+    info += "<span>" + validateY(Y_value) + "</span>";
+    info += "<span>" + validateX(X_value) + "</span>";
+    info += "<span>" + validateR(R_value) + "</span>";
 
     if (print_permission) {
         $('.Error_text').html(info);
@@ -14,16 +14,16 @@ function validate(print_permission){
     return (info === "<span></span>".repeat(3));
 }
 
-function validate_x(value){
+function validateX(value){
      correct_values = ["-2", "-1.5", "-1", "-0.5", "0", "0.5", "1", "1.5", "2"].map(Number);
      if (!(value.trim() === null)){
         
         if (isNaN(Number(value))){
-        return " Incorrect R input";
+        return " Incorrect X input";
         }
         const x = parseFloat(value);
         if (!correct_values.includes(x)){
-            return " Incorrect R value. Should be inside [-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2]";
+            return " Incorrect X value. Should be inside [-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2]";
          }
      return "";
 
@@ -33,7 +33,7 @@ function validate_x(value){
      }
 }
 
-function validate_y(value){
+function validateY(value){
     if (!(value.trim() === "")){
         if (isNaN(Number(value))) {
             return " Incorrect Y value\n ";
@@ -50,10 +50,10 @@ function validate_y(value){
     }  
 }
 
-function validate_r(value){
+function validateR(value){
     if (!(value.trim() === "")){
         if (isNaN(Number(value))) {
-            return " Incorrect Y value\n ";
+            return " Incorrect R value\n ";
         }
         const r = parseFloat(value);
 

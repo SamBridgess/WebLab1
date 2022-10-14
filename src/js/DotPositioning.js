@@ -1,17 +1,3 @@
- function get_table(){
-    $.ajax({
-        type: "GET",
-        url: "src/php/table.php",
-        async: false,
-        success: function(response) {
-            document.querySelector('#table > tbody').innerHTML = response;
-        },
-        error: function(data) {
-            alert(data);
-        }
-    });
-}
-
 document.querySelector('.values').onchange = function () {
     let Y_value = $('#Y_value').val();
     let X_value = $('#X_value').val();
@@ -24,5 +10,3 @@ document.querySelector('.values').onchange = function () {
         dot.attr('cy', 150 - 100 / R_value * Y_value);
     }
 }
-
-get_table();

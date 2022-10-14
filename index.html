@@ -8,10 +8,11 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="/src/js/clear_table.js" defer></script>
-    <script src="/src/js/table.js" defer></script>
-    <script src="/src/js/validation.js" defer></script>
-    <script src="/src/js/get_table.js" defer></script>
+    <script src="/src/js/CleanTable.js" defer></script>
+    <script src="/src/js/DotPositioning.js" defer></script>
+    <script src="/src/js/GetTable.js" defer></script>
+    <script src="/src/js/SendRequest.js" defer></script>
+    <script src="/src/js/Validation.js" defer></script>
 </head>
 
 <body style="background-color: #dfe19d">
@@ -42,29 +43,31 @@
                                 <option value="1.5">1.5</option>
                                 <option value="2">2</option>
                             </select>
-                        </div>
-                                             
+                        </div>                    
                         <!-- Y value block -->
                         <div class="Y_value">
-                            <p><input type="text" name="Y_value" id="Y_value" placeholder="Enter Y coordinate"/></p>
+                            <label for="Y_value"> Y[-3; 5]: </label>
+                            <input type="text" name="Y_value" id="Y_value" style="margin-left: 5px" placeholder="Enter Y coordinate"/>
                         </div>
     
                         <!-- R value block -->
                         <div class="R_value">
-                            <p><input type="text" name="R_value" id="R_value" placeholder="Enter Radius"/></p>
+                            <label for="R_value"> R[1; 4]: </label>
+                            <input type="text" name="R_value" id="R_value" style="margin-left: 11px" placeholder="Enter Radius"/>
+                        </div>
+                        <!-- Buttons reset and submit block -->
+                        <div class="buttons">
+                            <input type ="submit" value="submit" id="submit">
+                            <input type="reset" value="reset" id="reset">
                         </div>
                         <!-- Error text block -->
-                        <div class="Error_text" style="margin: 10%; display:grid;">
+                        <div class="Error_text" style="margin: 5%; display:grid;">
                             <span id="x_error"></span>
                             <span id="y_error"></span>
                             <span id="r_error"></span>
                         </div>                        
                     </div>
-                    <!-- Buttons reset and submit block -->
-                    <div class="buttons">
-                        <input type ="submit" value="submit" id="submit">
-                        <input type="reset" value="reset" id="reset">
-                    </div>
+                    
 
                 </div>
             </form>            
@@ -124,29 +127,26 @@
     </div>
     <!-- table blocks -->
     <div style="display: grid; justify-items: center; align-content: flex-start;">   
+        <div id="cleaner" class="cleaner">
+            <input type="button" value="Clean" id="clear_button" onclick="cleanTable()">
+        </div>
         <div>
             <table id="table">
                 <thead>
                 <tr>
-                    <th>X coordinate</th>
-                    <th>Y coordinate</th>
-                    <th>Radious</th>
-                    <th>Result</th>
-                    <th>Current time</th>
-                    <th>Execution time</th>
+                    <th style="width: 100px;">X coordinate</th>
+                    <th style="width: 100px;">Y coordinate</th>
+                    <th style="width: 100px;">Radious</th>
+                    <th style="width: 100px;">Result</th>
+                    <th style="width: 100px;">Current time</th>
+                    <th style="width: 100px;">Execution time</th>
                 </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>  
-        <!-- Clean table block -->
-        <div id="cleaner" class="cleaner">
-            <input type="button" value="Clean" id="clear_button" onclick="cleanTable()">
-        </div>
-
     </div>   
-    <!-- <script src="/src/js/OnlyOneCheckbox.js"></script> -->
 </body>
 
 </html>
