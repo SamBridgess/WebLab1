@@ -16,5 +16,6 @@ document.querySelector('.values').onchange = function () {
     }
     for(let i = X_value_array.length; i < dot_id_array.length; i++) {
         let dot = $(dot_id_array[i]);
+        dot.attr('r', '0');
     }
 }
