@@ -8,7 +8,9 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="/src/js/AddXValue.js" defer></script>
     <script src="/src/js/CleanTable.js" defer></script>
+    <script src="/src/js/ClearCheckBoxArray.js" defer></script>
     <script src="/src/js/DotPositioning.js" defer></script>
     <script src="/src/js/GetTable.js" defer></script>
     <script src="/src/js/SendRequest.js" defer></script>
@@ -30,20 +32,25 @@
                 <div class="form">
                     <div class="values">
                         <!-- X value block -->
-                        <div class="X_value"> 
-                            <label for="X_value"> X: </label>
-                            <select name="X_value" size="1" id="X_value">
-                                <option value="-2">-2</option>
-                                <option value="-1.5">-1.5</option>
-                                <option value="-1">-1</option>
-                                <option value="-0.5">-0.5</option>
-                                <option value="0">0</option>
-                                <option value="0.5">0.5</option>
-                                <option value="1">1</option>
-                                <option value="1.5">1.5</option>
-                                <option value="2">2</option>
-                            </select>
-                        </div>                    
+
+                        
+                        <div class="X_value">
+                            <label class="X_value"> X: </label><br>
+
+                            <input value="-2" type="checkbox" id="x_-2" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_-2">-2</label><br>
+                            <input value="-1.5" type="checkbox" id="x_-1.5" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_-1.5">-1.5</label><br>
+                            <input value="-1" type="checkbox" id="x_-1" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_-1">-1</label><br>
+                            <input value="-0.5" type="checkbox" id="x_-0.5" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_-0.5">-0.5</label><br>
+
+                            <input value="0" type="checkbox" id="x_0" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_0">0</label><br>
+
+                            <input value="0.5" type="checkbox" id="x_0.5" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_0.5">0.5</label><br>
+                            <input value="1" type="checkbox" id="x_1" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_1">1</label><br>
+                            <input value="1.5" type="checkbox" id="x_1.5" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_1.5">1.5</label><br>
+                            <input value="2" type="checkbox" id="x_2" name="X_checkbox" onchange="add_X_value(this.id)"><label for="x_2">2</label><br>
+                        </div>
+
+                          
                         <!-- Y value block -->
                         <div class="Y_value">
                             <label for="Y_value"> Y[-3; 5]: </label>
@@ -58,7 +65,7 @@
                         <!-- Buttons reset and submit block -->
                         <div class="buttons">
                             <input type ="submit" value="submit" id="submit">
-                            <input type="reset" value="reset" id="reset">
+                            <input type="reset" value="reset" id="reset" onclick="clearCheckboxArray()">
                         </div>
                         <!-- Error text block -->
                         <div class="Error_text" style="margin: 5%; display:grid;">

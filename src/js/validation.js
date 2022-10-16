@@ -1,10 +1,10 @@
-function validate(print_permission){
-    let X_value = $('#X_value').val();
+function validate(print_permission, X_value){
+    //let X_value = $('#X_value').val();
     let Y_value = $('#Y_value').val();
     let R_value = $('#R_value').val();
     let info = "";
-    info += "<span>" + validateY(Y_value) + "</span>";
     info += "<span>" + validateX(X_value) + "</span>";
+    info += "<span>" + validateY(Y_value) + "</span>";
     info += "<span>" + validateR(R_value) + "</span>";
 
     if (print_permission) {
@@ -16,6 +16,9 @@ function validate(print_permission){
 
 function validateX(value){
      correct_values = ["-2", "-1.5", "-1", "-0.5", "0", "0.5", "1", "1.5", "2"].map(Number);
+     if(value === null) {
+        return "Choose at least one X";
+     }
      if (!(value.trim() === null)){
         
         if (isNaN(Number(value))){
@@ -29,7 +32,7 @@ function validateX(value){
 
      }    
      else{
-        return " Field X is empty";
+        return "Choose X";
      }
 }
 
