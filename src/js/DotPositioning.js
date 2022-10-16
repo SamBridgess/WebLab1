@@ -14,5 +14,7 @@ document.querySelector('.values').onchange = function () {
             dot.attr('cy', 150 - 100 / R_value * Y_value);
         }
     }
-
+    for(let i = X_value_array.length; i < dot_id_array.length; i++) {
+        let dot = $(dot_id_array[i]);
+    }
 }
