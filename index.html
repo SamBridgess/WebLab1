@@ -8,13 +8,13 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="/src/js/AddXValue.js" defer></script>
-    <script src="/src/js/CleanTable.js" defer></script>
-    <script src="/src/js/ClearCheckBoxArray.js" defer></script>
-    <script src="/src/js/DotPositioning.js" defer></script>
-    <script src="/src/js/GetTable.js" defer></script>
-    <script src="/src/js/SendRequest.js" defer></script>
-    <script src="/src/js/Validation.js" defer></script>
+    <script src="src/js/AddXValue.js" defer></script>
+    <script src="src/js/CleanTable.js" defer></script>
+    <script src="src/js/ClearCheckBoxArray.js" defer></script>
+    <script src="src/js/DotPositioning.js" defer></script>
+    <script src="src/js/GetTable.js" defer></script>
+    <script src="src/js/SendRequest.js" defer></script>
+    <script src="src/js/Validation.js" defer></script>
 </head>
 
 <body style="background-color: #dfe19d">
@@ -27,7 +27,7 @@
     <div class="main" style="display:flex; justify-content: center;">
         <!-- Form to send -->
         <div>
-            <form id="forms" class="forms" onSubmit="sendRequest(); return false;" onreset="$('.Error_text').html(''); $('#dot').attr('r', '0');" >
+            <form id="forms" class="forms" onSubmit="sendRequest(); return false;" onreset="$('.Error_text').html(''); $('.dot').attr('r', '0');" >
     
                 <div class="form">
                     <div class="values">
@@ -127,8 +127,17 @@
                 <text x="170" y="102.5">R/2</text>
                 <text x="170" y="202.5">-R/2</text>
                 <text x="170" y="252.5">-R</text>
+
                 <!-- Choice dot -->
-                <circle id="dot" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d1" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d2" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d3" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d4" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d5" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d6" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d7" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d8" fill="red" color="red" r="0" cx="0" cy="0"/>
+                <circle class="dot" id="d9" fill="red" color="red" r="0" cx="0" cy="0"/>
             </svg>
         </div>
     </div>
