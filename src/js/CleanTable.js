@@ -2,8 +2,8 @@
 function cleanTable(){
     $('#table > tbody').html('');
     $.ajax({
-        type: "DELETE",
-        url: "src/php/table.php",
+        type: "GET",
+        url: "src/php/delete_table.php",
         async: false,
         success: function(data){
             getTable();
