@@ -71,7 +71,6 @@ table tr:last-child td:last-child {
 input::placeholder{
     color: #2e3131 ;
 }
-
 tr:nth-child(even) {
     background-color: #dddddd;
 }    
