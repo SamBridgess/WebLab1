@@ -7,7 +7,7 @@
             document.querySelector('#table > tbody').innerHTML = response;
         },
         error: function(data) {
-            alert(data);
+            console.log(data);
         }
     });
 }
